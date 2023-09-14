@@ -21,7 +21,7 @@
     "require": {
         "php": "^7.3 || ^8.0",
         "ext-json": "*",
-        "nesk/rialto": "dev-zoon",
+        "nesk/rialto": "dev-dev",
         "psr/log": "^1.0 || ^2.0 || ^3.0",
         "vierbergenlars/php-semver": "^3.0.2"
     },
@@ -52,7 +52,7 @@
     "repositories": [
         {
             "type": "git",
-            "url": "https://github.com/zoonru/rialto"
+            "url": "https://github.com/laminblur/rialto"
         }
     ]
 }
