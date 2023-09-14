@@ -1,14 +1,3 @@
-# 🚨 This project is not maintained anymore
-
-As I write these lines, it's been nearly two years since the latest release of PuPHPeteer. Despite the enthusiasm around this project, I no longer have the motivation to support its development, mainly because it never really had any use to me. So its time to be honest with you, PuPHPeteer is no longer maintained.
-
-However, here's a list of forks maintained by the community:
-
-- [zoonru/puphpeteer](https://github.com/zoonru/puphpeteer)
-- [NigelCunningham/puphpeteer](https://github.com/NigelCunningham/puphpeteer)
-
-If you create a fork and plan to maintain it, let me know and I will link it here.
-
 # PuPHPeteer
 
 <img src="https://user-images.githubusercontent.com/817508/100672192-dd258500-3361-11eb-845f-e8b5109752e4.png" style="max-width:100%;" width="190px" align="right">
@@ -166,6 +155,27 @@ try {
 ```
 
 Instead, a `Node\Exception` will be thrown, the Node process will stay alive and usable.
+
+### Puppeteer plugins
+
+To use puppeteer-extra plugins add them to your project:
+```shell
+npm install puppeteer puppeteer-extra puppeteer-extra-plugin-stealth
+```
+
+Then override js inclusion with js_extra option
+```php
+    $puppeteer = new Puppeteer([
+        'js_extra' => /** @lang JavaScript */ "
+            const puppeteer = require('puppeteer-extra');
+            const StealthPlugin = require('puppeteer-extra-plugin-stealth');
+            puppeteer.use(StealthPlugin());
+            instruction.setDefaultResource(puppeteer);
+        "
+    ]);
+```
+
+
 
 ## License
 
